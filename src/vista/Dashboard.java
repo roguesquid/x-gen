@@ -5,7 +5,6 @@
 package vista;
 
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
-import javax.swing.JButton;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -32,12 +31,24 @@ public class Dashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        logo = new javax.swing.JLabel();
+        botonVentas = new javax.swing.JButton();
+        botonMedicamentos = new javax.swing.JButton();
+        botonInventario = new javax.swing.JButton();
+        botonSalir = new javax.swing.JButton();
+        opcionMedicamentos = new javax.swing.JPanel();
+        infoMedicamentoDos = new javax.swing.JLabel();
+        infoMedicamentoTres = new javax.swing.JLabel();
+        infoMedicamentoUno = new javax.swing.JLabel();
+        iconoUsuario = new javax.swing.JLabel();
+        botonCompra = new javax.swing.JButton();
+        carritoCompras = new javax.swing.JLabel();
+        medicamentosTitulo = new javax.swing.JLabel();
+        medicamentosSubtitulo = new javax.swing.JLabel();
+        publicidadOnline = new javax.swing.JLabel();
+        publicidadMedicamentos = new javax.swing.JLabel();
+        fondo = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(300, 100));
@@ -46,56 +57,119 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logo.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 18, -1, -1));
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logo.png"))); // NOI18N
+        jPanel1.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 18, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Hind", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(109, 127, 136));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dollar.png"))); // NOI18N
-        jButton1.setText("  Ventas");
-        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton1.setMargin(new java.awt.Insets(2, 10, 2, 14));
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 185, 128, 33));
-
-        jButton2.setBackground(new java.awt.Color(108, 170, 255));
-        jButton2.setFont(new java.awt.Font("Hind", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pill.png"))); // NOI18N
-        jButton2.setText("Medicamentos");
-        jButton2.setMargin(new java.awt.Insets(2, 6, 2, 14));
-        jButton2.setOpaque(true);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        botonVentas.setFont(new java.awt.Font("Hind", 1, 12)); // NOI18N
+        botonVentas.setForeground(new java.awt.Color(109, 127, 136));
+        botonVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos/dollar.png"))); // NOI18N
+        botonVentas.setText("  Ventas");
+        botonVentas.setBorderPainted(false);
+        botonVentas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        botonVentas.setMargin(new java.awt.Insets(2, 10, 2, 14));
+        botonVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                botonVentasActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 95, 128, 33));
+        jPanel1.add(botonVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 140, 33));
 
-        jButton3.setFont(new java.awt.Font("Hind", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(109, 127, 136));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tasks.png"))); // NOI18N
-        jButton3.setText("  Inventario");
-        jButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton3.setMargin(new java.awt.Insets(2, 10, 2, 14));
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 140, 128, 33));
+        botonMedicamentos.setBackground(new java.awt.Color(108, 170, 255));
+        botonMedicamentos.setFont(new java.awt.Font("Hind", 1, 12)); // NOI18N
+        botonMedicamentos.setForeground(new java.awt.Color(255, 255, 255));
+        botonMedicamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos/pill.png"))); // NOI18N
+        botonMedicamentos.setText("Medicamentos");
+        botonMedicamentos.setBorderPainted(false);
+        botonMedicamentos.setMargin(new java.awt.Insets(2, 6, 2, 14));
+        botonMedicamentos.setOpaque(true);
+        botonMedicamentos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonMedicamentosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(botonMedicamentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 140, 33));
 
-        jButton4.setBackground(new java.awt.Color(136, 186, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logout.png"))); // NOI18N
-        jButton4.setMargin(new java.awt.Insets(8, 10, 8, 10));
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 550, -1, -1));
+        botonInventario.setFont(new java.awt.Font("Hind", 1, 12)); // NOI18N
+        botonInventario.setForeground(new java.awt.Color(109, 127, 136));
+        botonInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos/tasks.png"))); // NOI18N
+        botonInventario.setText("  Inventario");
+        botonInventario.setBorderPainted(false);
+        botonInventario.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        botonInventario.setMargin(new java.awt.Insets(2, 10, 2, 14));
+        botonInventario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonInventarioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(botonInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 140, 33));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 722, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 568, Short.MAX_VALUE)
-        );
+        botonSalir.setBackground(new java.awt.Color(136, 186, 255));
+        botonSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos/logout.png"))); // NOI18N
+        botonSalir.setBorderPainted(false);
+        botonSalir.setMargin(new java.awt.Insets(8, 10, 8, 10));
+        botonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonSalirMouseClicked(evt);
+            }
+        });
+        botonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSalirActionPerformed(evt);
+            }
+        });
+        jPanel1.add(botonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 550, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 16, 722, 568));
+        opcionMedicamentos.setBackground(new java.awt.Color(255, 255, 255));
+        opcionMedicamentos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        infoMedicamentoDos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/infoMedicamento.png"))); // NOI18N
+        opcionMedicamentos.add(infoMedicamentoDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 480, 170));
+
+        infoMedicamentoTres.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/infoMedicamento.png"))); // NOI18N
+        opcionMedicamentos.add(infoMedicamentoTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 480, 170));
+
+        infoMedicamentoUno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/infoMedicamento.png"))); // NOI18N
+        opcionMedicamentos.add(infoMedicamentoUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 480, 170));
+
+        iconoUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/User.png"))); // NOI18N
+        opcionMedicamentos.add(iconoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 20, 60, 50));
+
+        botonCompra.setBackground(new java.awt.Color(108, 170, 255));
+        botonCompra.setFont(new java.awt.Font("Hind", 1, 14)); // NOI18N
+        botonCompra.setForeground(new java.awt.Color(255, 255, 255));
+        botonCompra.setText("Realizar pago");
+        botonCompra.setBorderPainted(false);
+        botonCompra.setMargin(new java.awt.Insets(2, 6, 2, 14));
+        botonCompra.setOpaque(true);
+        botonCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCompraActionPerformed(evt);
+            }
+        });
+        opcionMedicamentos.add(botonCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 250, 180, 40));
+
+        carritoCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/carritoCompras.png"))); // NOI18N
+        opcionMedicamentos.add(carritoCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 260, 320));
+
+        medicamentosTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MedicamentosTitle.png"))); // NOI18N
+        opcionMedicamentos.add(medicamentosTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 330, 40));
+
+        medicamentosSubtitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MedicamentosSubtitle.png"))); // NOI18N
+        opcionMedicamentos.add(medicamentosSubtitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 230, 20));
+
+        publicidadOnline.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/DisfrutaEtc.png"))); // NOI18N
+        opcionMedicamentos.add(publicidadOnline, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, 250, 240));
+
+        publicidadMedicamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/DistribuidosPorXGen.png"))); // NOI18N
+        opcionMedicamentos.add(publicidadMedicamentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, 240, -1));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo.png"))); // NOI18N
+        opcionMedicamentos.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jPanel1.add(opcionMedicamentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 16, 722, 568));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -116,10 +190,77 @@ public class Dashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void botonMedicamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMedicamentosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-    
+        botonMedicamentos.setBackground(new java.awt.Color(108, 170, 255));
+        botonMedicamentos.setForeground(new java.awt.Color(255, 255, 255));
+        botonMedicamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos/pill.png"))); // NOI18N
+        botonMedicamentos.setOpaque(true);
+        
+        botonInventario.setBackground(new java.awt.Color(255, 255, 255));
+        botonInventario.setForeground(new java.awt.Color(109, 127, 136));
+        botonInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos/tasks.png"))); // NOI18N
+        botonInventario.setOpaque(false);
+        
+        botonVentas.setBackground(new java.awt.Color(255, 255, 255));
+        botonVentas.setForeground(new java.awt.Color(109, 127, 136));
+        botonVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos/dollar.png"))); // NOI18N
+        botonVentas.setOpaque(false);
+    }//GEN-LAST:event_botonMedicamentosActionPerformed
+
+    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
+        // TODO add your handling code here:
+        carritoCompras.setVisible(true);
+        botonCompra.setVisible(true);
+        publicidadOnline.setVisible(false);
+    }//GEN-LAST:event_botonSalirActionPerformed
+
+    private void botonCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCompraActionPerformed
+        // TODO add your handling code here:
+        carritoCompras.setVisible(false);
+        botonCompra.setVisible(false);
+        publicidadOnline.setVisible(true);
+    }//GEN-LAST:event_botonCompraActionPerformed
+
+    private void botonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonInventarioActionPerformed
+        // TODO add your handling code here:
+        botonInventario.setBackground(new java.awt.Color(108, 170, 255));
+        botonInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos/TasksWhite.png"))); // NOI18N        
+        botonInventario.setForeground(new java.awt.Color(255, 255, 255));
+        botonInventario.setOpaque(true);
+        
+        botonMedicamentos.setBackground(new java.awt.Color(255, 255, 255));
+        botonMedicamentos.setForeground(new java.awt.Color(109, 127, 136));
+        botonMedicamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos/Pill-rBlack.png"))); // NOI18N
+        botonMedicamentos.setOpaque(false);
+        
+        botonVentas.setBackground(new java.awt.Color(255, 255, 255));
+        botonVentas.setForeground(new java.awt.Color(109, 127, 136));
+        botonVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos/dollar.png"))); // NOI18N
+        botonVentas.setOpaque(false);
+    }//GEN-LAST:event_botonInventarioActionPerformed
+
+    private void botonVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVentasActionPerformed
+        // TODO add your handling code here:
+        botonVentas.setBackground(new java.awt.Color(108, 170, 255));
+        botonVentas.setForeground(new java.awt.Color(255, 255, 255));
+        botonVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos/dollarWhite.png"))); // NOI18N
+        botonVentas.setOpaque(true);
+        
+        botonMedicamentos.setBackground(new java.awt.Color(255, 255, 255));
+        botonMedicamentos.setForeground(new java.awt.Color(109, 127, 136));
+        botonMedicamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos/Pill-rBlack.png"))); // NOI18N
+        botonMedicamentos.setOpaque(false);
+        
+        botonInventario.setBackground(new java.awt.Color(255, 255, 255));
+        botonInventario.setForeground(new java.awt.Color(109, 127, 136));
+        botonInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos/tasks.png"))); // NOI18N
+        botonInventario.setOpaque(false);
+    }//GEN-LAST:event_botonVentasActionPerformed
+
+    private void botonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSalirMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_botonSalirMouseClicked
     
     /**
      * @param args the command line arguments
@@ -140,13 +281,25 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton botonCompra;
+    private javax.swing.JButton botonInventario;
+    private javax.swing.JButton botonMedicamentos;
+    private javax.swing.JButton botonSalir;
+    private javax.swing.JButton botonVentas;
+    private javax.swing.JLabel carritoCompras;
+    private javax.swing.JLabel fondo;
+    private javax.swing.JLabel iconoUsuario;
+    private javax.swing.JLabel infoMedicamentoDos;
+    private javax.swing.JLabel infoMedicamentoTres;
+    private javax.swing.JLabel infoMedicamentoUno;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel logo;
+    private javax.swing.JLabel medicamentosSubtitulo;
+    private javax.swing.JLabel medicamentosTitulo;
+    private javax.swing.JPanel opcionMedicamentos;
+    private javax.swing.JLabel publicidadMedicamentos;
+    private javax.swing.JLabel publicidadOnline;
     // End of variables declaration//GEN-END:variables
 }
 
